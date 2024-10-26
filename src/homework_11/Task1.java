@@ -12,6 +12,9 @@ public class Task1 {
         int sum = sumArray(arr);
         System.out.println("Сумма элементов массива: " + sum);
 
+        double avarage = averageArray(arr);
+        System.out.println("Среднее значение: " + avarage);
+
 
     } // Methods area
 
@@ -27,5 +30,15 @@ public class Task1 {
 
     }
 
+    public static double averageArray(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+
+        }
+        return (double) sum / arr.length;
+
+
+    }
 
 } // End class
