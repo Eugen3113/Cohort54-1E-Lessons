@@ -1,4 +1,7 @@
 ### IntelliJ IDEA ###
+.idea/
+ignore*
+Cohort_54_1.iml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
