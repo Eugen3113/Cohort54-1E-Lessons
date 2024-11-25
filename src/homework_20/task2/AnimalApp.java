@@ -10,7 +10,7 @@ public class AnimalApp {
 
         System.out.println(mouse); // Вызывает метод toString() класса Mouse
         mouse.caught(); // Поймать мышку
-        //System.out.println(mouse); // Проверка информации о мышке после поимки
+        System.out.println(mouse); // Проверка информации о мышке после поимки
         mouse.escape(); // Освобождение мышки
         System.out.println(mouse);
 

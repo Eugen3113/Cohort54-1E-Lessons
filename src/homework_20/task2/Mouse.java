@@ -1,7 +1,7 @@
 package homework_20.task2;
 
 class Mouse extends Animal {
-    private boolean isCaught; //    поймана ли мышка
+    private boolean isCaught; // Указывает, поймана ли мышка
 
     public Mouse(String name, int age) {
         super(name, age);

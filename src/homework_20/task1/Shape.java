@@ -35,7 +35,7 @@ Copy
 
 public class Shape {
     protected String name;  // Название фигуры - name
-    protected String color; //Цвет фигуры -
+    protected String color; // Цвет фигуры -
 
     public Shape(String name) {
         this.name = name;

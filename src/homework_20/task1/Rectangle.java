@@ -2,7 +2,7 @@ package homework_20.task1;
 
 public class Rectangle extends Shape {
     private double width; // Ширина- width
-    private double height; //  Высота- height
+    private double height; // Высота- height
 
     public Rectangle() {
         super("Прямоугольник");

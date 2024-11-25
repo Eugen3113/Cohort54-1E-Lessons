@@ -1,7 +1,7 @@
 package homework_20.task1;
 
 public class Circle extends Shape{
-    private double radius; //Радиус
+    private double radius; // Радиус
 
     public Circle() {
         super("Круг");
