@@ -8,7 +8,7 @@ package lesson_20.tranport;
 
 //          Smartphone is-a Vehicle - НЕ верно. Наследоваться нельзя.
 //            Bus is-a Vehicle -> Верно. Можно применять наследование
-public class Bus extends lesson_20.tranport.Vehicle {
+public class Bus extends Vehicle {
 
     /*
     A extends B -> A наследуется от класса B (класс A расширяет класс B)
@@ -61,3 +61,4 @@ public class Bus extends lesson_20.tranport.Vehicle {
 
     }
 }
+

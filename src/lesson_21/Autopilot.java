@@ -27,7 +27,7 @@ public class Autopilot {
     }
 
     public void setAutobus(Autobus autobus) {
-        this.autobus = autobus;
+
     }
 
     public String getSoftwareVersion() {
@@ -37,5 +37,6 @@ public class Autopilot {
     public void setSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
     }
+
 }
 

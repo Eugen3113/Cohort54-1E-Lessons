@@ -5,7 +5,7 @@ package lesson_20.tranport;
  * {@code @date} 19.11.2024
  */
 
-public class InternationalBus extends lesson_20.tranport.Bus {
+public class InternationalBus extends Bus {
 
     private String[] countries;
 
