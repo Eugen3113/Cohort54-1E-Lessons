@@ -11,7 +11,7 @@ Task 1
 Создайте интерфейсы Swimmer и Runner с методами swim() и run() соответственно.
 
 Реализуйте класс Triathlete,
-который будет реализовывать оба интерфейса.
+который будет реализовывать оба интерфейса (implements).
 
 Убедитесь, что класс Triathlete корректно выполняет действия, связанные с бегом и плаванием.
  */
@@ -23,17 +23,17 @@ public class Task1App {
         triathlete.run();
         triathlete.swim();
 
-        if (triathlete instanceof Swimmer) {
+        if (triathlete instanceof Swimmer) {  //
             Swimmer swimmer = (Swimmer) triathlete;
             swimmer.swim();
         }
 //
-//        Swimmer athlete = new Triathlete();
-//        athlete.swim();
+//        Swimmer athlete = new Triathlete();  // создаём нового атлета (Swimmer)
+//        athlete.swim();                      // можем вызвать только swim
 
-        if (triathlete instanceof Runner) {
+        if (triathlete instanceof Runner) {    // проверяем можно ли триатлета назвать (Runner- бегуном)
             Runner runner = (Runner) triathlete;
-            runner.run();
+            runner.run();                    // вызываем метод run
         }
 
 

@@ -20,8 +20,8 @@ public class BankAccount extends VusaMember {
     }
 
     @Override
-    public boolean transferMoney(double amountEur, PaymentSystem recipient) {
-        if (amountEur > balance) {
+    public boolean transferMoney(double amountEur, PaymentSystem recipient) {  //перевод денег-transferMoney
+        if (amountEur > balance) {  // проверка баланса
             System.out.printf("Недостаточно средств: (transfer: %.2f | balance: %.2f)\n)",
                     amountEur, balance);
             return false;
@@ -30,15 +30,16 @@ public class BankAccount extends VusaMember {
         if (recipient.getCurrency().equals("EUR")) {
             // Перевод евро на евровый счет
             balance -= amountEur;
-            recipient.depositTransfer(amountEur);
+            recipient.depositTransfer(amountEur); // Перевожу
             System.out.printf("Успех! Перевод %.2f EUR (%s -> %s)\n",
-                    amountEur, title, recipient.getTitle());
-            return true;
+                    // перевод откуда и куда (%s -> %s) .
+                    amountEur, title, recipient.getTitle()); // перевод в евро,назв-е банка,имя получателя
+            return true;  // успех.
         } else if(recipient.getCurrency().equals("BTC")) {
             // Конвертировать EUR в BTC
-            double amountBtc = amountEur / getCourseBTC();
+            double amountBtc = amountEur / getCourseBTC(); // проверяем курс EUR/BTC.
             balance -= amountEur;
-            recipient.depositTransfer(amountBtc);
+            recipient.depositTransfer(amountBtc); // перечисляем получателю в BTC.
 
             System.out.printf("Успех! Перевод %.2f EUR в %.7f BTC (%s -> %s)\n",
                     amountEur, amountBtc, title, recipient.getTitle());
@@ -51,7 +52,7 @@ public class BankAccount extends VusaMember {
     }
 
 //    @Override
-//    public boolean withdrawMoney(double amount) {
+//    public boolean withdrawMoney(double amount) {   // Вывод денег-withdrawMoney
 //        if (amount > balance) {
 //            System.out.println("Недостаточно средств для снятия " +   amount);
 //            return false;

@@ -22,17 +22,17 @@ transferMoney() (перевод средств на другой счет) -
 public class Bank2App {
     public static void main(String[] args) {
 
-        PaymentSystem bank = new BankAccount("Cyprus Bank", 50000);
-        System.out.println(bank.withdrawMoney(1000));
-        System.out.println(bank);
+        PaymentSystem bank = new BankAccount("Cyprus Bank", 50000); //ложу на свой счёт
+        System.out.println(bank.withdrawMoney(1000));  // вывожу деньги
+        System.out.println(bank);  //BankAccount: {title=Cyprus Bank, balance=49000.0, currency: EUR}
 
-        bank.withdrawMoney(1_000_000);
+        bank.withdrawMoney(1_000_000);  //Недостаточно средств для снятия 1000000.0
 
         System.out.println("\n ============ Transfer ==============");
-        PaymentSystem bank2 = new BankAccount("A-Bank", 10000);
-        bank.transferMoney(14000, bank2);
-        System.out.println(bank);
-        System.out.println(bank2);
+        PaymentSystem bank2 = new BankAccount("A-Bank", 10000); // банк2, на счету 10000.
+        bank.transferMoney(14000, bank2);   //с Cyprus Bank на  : A-Bank зачисляю на счет: 14000.0EUR
+        System.out.println(bank);  //BankAccount: {title=Cyprus Bank, balance=35000.0, currency: EUR}
+        System.out.println(bank2);  //BankAccount: {title=A-Bank, balance=24000.0, currency: EUR}
 
         System.out.println("\n ============ Transfer2 ==============");
         PaymentSystem wallet = new BtcWallet("Crypto Wallet", 3);

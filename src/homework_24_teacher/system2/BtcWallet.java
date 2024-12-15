@@ -1,5 +1,5 @@
 package homework_24_teacher.system2;
-
+                             // VisaMaster == VusaMember.
 public class BtcWallet extends VusaMember{
 
     public BtcWallet(String title, double balance) {

@@ -16,7 +16,7 @@ public abstract class VusaMember implements PaymentSystem {
         this.title = title;
         this.balance = balance;
         this.currency = currency;
-        setActualBtcCourse(currency);
+        setActualBtcCourse(currency); // подтягивает актуальный курс биткоина
     }
 
     public void  setActualBtcCourse(String currency) {

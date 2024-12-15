@@ -1,9 +1,10 @@
 package lesson_25.generics;
 
+                            // generic - обобщение
 public class SimpleBox {
     private Object value;
 
-    public SimpleBox(Object value) {
+    public SimpleBox(Object value) {  // конструктор
         this.value = value;
     }
 

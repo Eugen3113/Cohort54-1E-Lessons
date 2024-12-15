@@ -9,11 +9,11 @@ public class Triathlete implements Swimmer, Runner {
 
     @Override
     public void run() {
-        System.out.println("Triathlete is running");
+        System.out.println("Triathlete is running");  // триатлет бежит
     }
 
     @Override
     public void swim() {
-        System.out.println("Triathlete is swimming");
+        System.out.println("Triathlete is swimming");  // триатлет плывёт
     }
 }

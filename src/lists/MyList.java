@@ -1,4 +1,4 @@
-package lesson_25_Generics.lms.code;
+package lists;
 
 public interface MyList<T> {
 
@@ -98,3 +98,4 @@ public interface MyList<T> {
 
 
 }
+

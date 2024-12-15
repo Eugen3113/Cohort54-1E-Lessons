@@ -3,7 +3,7 @@ package lesson_25.generics;
 
 public class Wrappers {
     public static void main(String[] args) {
-
+        // Wrapper - обёртка
         // Классы-обертки используются в Java для представления примитивных типов данных как объектов (ссылочных типов данных)
 
         /*
