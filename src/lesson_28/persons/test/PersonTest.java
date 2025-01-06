@@ -24,17 +24,17 @@ public class PersonTest {
 
     @BeforeEach
     void setUp(){
-        person = new Person(startEmail, startPassword);
+        person = new Person(startEmail, startPassword); // добаваляем нового Person
     }
 
     @Test
-    void testValidEmailSet() {
+    void testValidEmailSet() {    // установка тестирование валидного пароля
         String validEmail = "valid@test.com";
 
         person.setEmail(validEmail);
 
-        assertEquals(validEmail, person.getEmail());
-        assertNotEquals(startEmail, person.getEmail());
+        assertEquals(validEmail, person.getEmail()); // validEmail-ожидаемый результат ,person.getEmail()- фактический результат
+        assertNotEquals(startEmail, person.getEmail()); //проверяю что startEmail был заменён на validEmail
     }
 
     /*
@@ -51,7 +51,7 @@ public class PersonTest {
     @MethodSource("invalidEmailData")
     void testInvalidEmailSet(String invalidEmail) {
         person.setEmail(invalidEmail);
-        assertNotEquals(invalidEmail, person.getEmail());
+        assertNotEquals(invalidEmail, person.getEmail()); // invalidEmail- недолжен появиться у person(проверка)
         assertEquals(startEmail, person.getEmail());
     }
 
@@ -69,7 +69,8 @@ public class PersonTest {
                 "1test@mail.net",
                 "_test@mail.net",
                 ".test@mail.net",
-                "test+1@mail.net"
+                "test+1@mail.net",
+                "test,@mail.net"
         );
     }
 

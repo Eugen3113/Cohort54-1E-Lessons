@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * {@code @date} 12.12.2024
  */
 
-public class Person {
+public class Person { //подключаем ФРЕМВОРК, на название класса(Person) курсор,потом Alt+Enter, create test, ok,
     private String email;
     private String password;
 
@@ -104,15 +104,16 @@ public class Person {
         String symbols = "!%$@&*()[]";
 
         // альтернативный способ объявления пременных
-        boolean[] result = new boolean[4]; // false, false
+        boolean[] result = new boolean[4]; // будут иметь значение- false, false, false, false
 
-        for (int i = 0; i < password.length(); i++) {
-            char ch = password.charAt(i);
-
-            if (Character.isDigit(ch)) result[0] = true;
-            if (Character.isUpperCase(ch)) result[1] = true;
-            if (Character.isLowerCase(ch)) result[2] = true;
-            if (symbols.indexOf(ch) >= 0) result[3] = true;
+        for (int i = 0; i < password.length(); i++) {  // перебираю символы в пароли
+            char ch = password.charAt(i); // получаю текущий символ
+                 // Character - ch обёрточный класс
+            if (Character.isDigit(ch)) result[0] = true; // если переменная ЦИФРА то -true
+            if (Character.isUpperCase(ch)) result[1] = true; // если переменная с БОЛЬШОй буквы - true
+            if (Character.isLowerCase(ch)) result[2] = true; // если переменная с МАЛЕНЬКОЙ буквы - true
+            if (symbols.indexOf(ch) >= 0) result[3] = true; // если символ будет найден(чтото больше нуля
+            // )
         }
 
         // Если хотя бы в одной переменной останется значение false,

@@ -8,20 +8,20 @@ import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-
+import static org.junit.jupiter.api.Assertions.*; // Assertions -горела красным.Нав курсор или на красн лампочку потом:Add library....
+                                                  // * -подгружаю в этот класс( Assertions) все статические методы
+                                                  // (*)навёл мышкой на Assertions и Alt + Enter, выбрать Add.... (стр.42)
 class ExampleTest {
 
 
     // Метод, помеченный @BeforeEach будет выполняться перед КАЖДЫМ тестовым методом
-    @BeforeEach
+    @BeforeEach   //BeforeEach - перед каждым
     void setUp() {
         System.out.println("Метод @BeforeEach");
     }
     /*
     @BeforeEach - будет выполняться перед КАЖДЫМ тестовым методом
-    @BeforeAll - метод выполнится только один раз перед выполнение первого теста (требует static)
+    @BeforeAll - метод выполнится только один раз перед выполнением первого теста (требует static)
     @AfterEach - будет выполняться после КАЖДОГО тестовым методом
     @AfterAll - метод выполнится только один раз после выполнение последнего теста (требует static)
     @Disabled - указывает, что тест отключен и выполнять метод не требуется
@@ -37,9 +37,9 @@ class ExampleTest {
         int result = 2 + 2;
 
         // Методы проверки утверждений
-
+        // принимает   (ожидаемое, фактическое)значение. строка 41.
         // assertEquals(expected, actual)
-        Assertions.assertEquals(4, result); // проверяет равны ли два значения
+        Assertions.assertEquals(4, result); // проверяет равны ли два значения   // Test addition- ok
         assertNotEquals(9, result); // тест будет пройден, если "неожидаемый результат" не равен фактическому
         assertTrue(result >= 4); // проверяет, что условие верно (возвращает true)
         assertFalse(result > 4); // проверяет, что условие ложно (условие возвращает false)
@@ -47,7 +47,7 @@ class ExampleTest {
         assertNotNull("String"); // Проверяет, что объект не равен null
     }
 
-    @Disabled
+    @Disabled  // тест Отключен и выполнять метод не требуется
     @Test
     public void emptyTest() {
         System.out.println("Empty test");
@@ -56,14 +56,14 @@ class ExampleTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 5, 9, 11})
+    @ValueSource(ints = {1, 5, 9, 11}) //@ValueSource-источник данных  --принимает массив intов
     public void testNumbers(int number) {
         System.out.println("number = " + number);
         assertTrue(number > 0);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"apple", "banana", "cherry"})
+    @ValueSource(strings = {"apple", "banana", "cherry"}) //@ValueSource -принимает массив stringов
     public void testFruit(String fruit) {
         System.out.println("fruit = " + fruit);
         assertTrue(fruit.length() > 2);
@@ -73,8 +73,8 @@ class ExampleTest {
 //    banana,2
     // CSV - Comma-Separated-Value
     @ParameterizedTest
-    @CsvSource({"apple, 1", "banana, 2", "cherry, 3"})
-    void testWithCsvSource(String fruit, int rank) {
+    @CsvSource({"apple, 1", "banana, 2", "cherry, 3"})         // @CsvSource - принимает string,int, ...
+    void testWithCsvSource(String fruit, int rank) {           // rank- число
         System.out.println(fruit + " | " + (rank + 10));
         assertTrue(fruit.length() > 4 && rank > 0);
     }
@@ -90,21 +90,21 @@ class ExampleTest {
 
     // Источник данных Enum
     @ParameterizedTest
-    @EnumSource(Day.class)
+    @EnumSource(Day.class)    // дни недели Enums- константы
     void testEnums(Day day) {
         System.out.println("day = " + day);
         assertNotNull(day);
     }
 
     @ParameterizedTest
-    @MethodSource("testDataString")
+    @MethodSource("testDataString")   // @MethodSource -источник данных.("testDataString")- название метода
     public void testWithMethodSource(String argument) {
         System.out.println("argument = " + argument);
         assertNotNull(argument);
     }
-
+           // Stream- набор значений, который можно перебирать(массив)
     static Stream<String> testDataString() {
-        return Stream.of("apple", "banana", "cherry");
+        return Stream.of("apple", "banana", "cherry"); // в методе .of перечисляю значения
     }
 
     static Stream<Integer> testInteger() {
@@ -112,14 +112,14 @@ class ExampleTest {
     }
 
     @ParameterizedTest
-    @MethodSource("testDataArguments")
+    @MethodSource("testDataArguments")   // класс Arguments - может принимать различные наборы данных,аргументов
     void testMethodSource2(int value, int expected, boolean isEquals) {
         System.out.println(value + " | " + expected + " | " + isEquals);
         int result = value * value;
         assertEquals(isEquals, result == expected);
     }
 
-    static Stream<Arguments> testDataArguments() {
+    static Stream<Arguments> testDataArguments() {    // класс Arguments - может принимать различные наборы данных
         return Stream.of(
                 Arguments.of(2, 4, true),
                 Arguments.of(3, 9, true),
