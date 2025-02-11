@@ -126,8 +126,8 @@ public class Person { //подключаем ФРЕМВОРК, на назван
     }
 
     public void setPassword(String password) {
-        if (isPasswordValid(password)) { // если пароль валидный
-            this.password = password; // то присваиваем пароль
+        if (isPasswordValid(password)) {
+            this.password = password;
         }
     }
 

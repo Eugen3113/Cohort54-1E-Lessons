@@ -78,21 +78,21 @@ public class PersonTestHW {
 
 
     @ParameterizedTest
-    @ValueSource(strings = {"qwerty1Q!", "1FDGADFFa$", "sad %Der0", "парольП4%"})
+    @ValueSource(strings = {"qwerty1Q!", "1FDGADFFa$", "sad %Der0", "парольП4%"}) // в массиве указаны валидные пароли
     void testValidPasswordSet(String validPassword) {
-        person.setPassword(validPassword);
+        person.setPassword(validPassword);    // добавляю валидный пароль пёрсону
 
-        Assertions.assertNotNull(person.getPassword());
-        assertEquals(validPassword, person.getPassword());
+        Assertions.assertNotNull(person.getPassword()); // проверяю что пароль не null
+        assertEquals(validPassword, person.getPassword()); // сравниваю (ожидаемый результат, фактический результат)
     }
 
     @ParameterizedTest
-    @MethodSource("invalidPasswordData")
-    void testInvalidPasswordSet(String invalidPassword) {
-        person.setPassword(invalidPassword);
+    @MethodSource("invalidPasswordData")   // вызываю  @MethodSource, называю его "invalidPasswordData"
+    void testInvalidPasswordSet(String invalidPassword) {  // создаю метод testInvalidPasswordSet с параметром invalidPassword
+        person.setPassword(invalidPassword);  // добавляю инвалидный пароль пёрсону
 
-        assertNotEquals(invalidPassword, person.getPassword());
-        assertEquals(startPassword, person.getPassword());
+        assertNotEquals(invalidPassword, person.getPassword());  // (неожидаемый результат (небудет установлен), фактический рез-т)
+        assertEquals(startPassword, person.getPassword());      // (ожидаемый startPassword, фактический person.getPassword())
     }
 
     static Stream<String> invalidPasswordData() {
@@ -106,7 +106,7 @@ public class PersonTestHW {
     }
 
      /*
-    Требования к паролю
+    Требования к валидному паролю
     1. Длина >= 8
     2. Должна быть мин 1 маленькая буква
     3. Должна быть мин 1 большая буква

@@ -12,7 +12,7 @@ public class Employee {
     private String lastName;
     private int age;
 
-    public Employee(String name, String lastName, int age) { // конструктор
+    public Employee(String name, String lastName, int age) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -41,16 +41,16 @@ public class Employee {
 //        return age == employee.age && Objects.equals(name, employee.name) && Objects.equals(lastName, employee.lastName);
 //    }
     // ....................................................
-                        // hashCode - хэш-код - уникальное значение для каждого объекта
+
     // генеоируем equals и hashCode с помощью IDEA:
     // Alt + Einfg -> equals() and hashCode() -> getClass() comparison .. -> next -> next ->  create
 
     @Override
-    public final boolean equals(Object o) {  // final - нельзя переопределить, но можно переопределить в наследниках
+    public final boolean equals(Object o) {
         if (!(o instanceof Employee)) return false;             // if (если) - проверка на совпадение классов
 
-        Employee employee = (Employee) o;  // приведение к типу Employee
-        return age == employee.age && Objects.equals(name, employee.name) && Objects.equals(lastName, employee.lastName); // if (если) - проверка на совпадение значимых полей
+        Employee employee = (Employee) o;
+        return age == employee.age && Objects.equals(name, employee.name) && Objects.equals(lastName, employee.lastName);
     }
 
 

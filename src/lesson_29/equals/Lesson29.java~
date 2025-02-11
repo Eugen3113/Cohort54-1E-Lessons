@@ -5,9 +5,9 @@ import java.util.Objects;
 public class Lesson29 {
     public static void main(String[] args) {
 
-        String s1 = "Java"; // это один и тот же объект
-        String s2 = "Java"; // это один и тот же объект
-        String s3 = new String("Java"); // это не один и тот же объект
+        String s1 = "Java";
+        String s2 = "Java";
+        String s3 = new String("Java");
 
         System.out.println(s1 == s2); // true
         System.out.println(s1 == s3); //false
@@ -34,9 +34,9 @@ public class Lesson29 {
 
         System.out.println("\n======================\n");
 
-        Employee nullEmployee = new Employee(null, null, 0); // это один и тот же объект
-        Employee nullEmployee1 = new Employee(null, null, 0); // это один и тот же объект
-        System.out.println(nullEmployee.equals(nullEmployee1)); // true
+        Employee nullEmployee = new Employee(null, null, 0);
+        Employee nullEmployee1 = new Employee(null, null, 0);
+        System.out.println(nullEmployee.equals(nullEmployee1));
         System.out.println(Objects.equals(null, null)); // true
 
         }
