@@ -50,7 +50,7 @@ public class Sportsman implements Comparable<Sportsman> {
 
 
     @Override
-    public int compareTo(Sportsman Sportsman1) {
-        return this.age - Sportsman1.getAge();
+    public int compareTo(Sportsman sportsman1) {
+        return this.age - sportsman1.getAge();
     }
 }

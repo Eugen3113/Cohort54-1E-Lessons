@@ -1,6 +1,8 @@
 ### IntelliJ IDEA ###
 .idea/
 ignore*
+*~
+*.iml
 Cohort_54_1.iml
 out/
 !**/src/main/**/out/
