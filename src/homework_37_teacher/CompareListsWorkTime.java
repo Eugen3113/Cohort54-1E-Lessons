@@ -31,24 +31,24 @@ Task 2
  */
 
 public class CompareListsWorkTime {
-    private static final int CAPACITY = 150_000;
-    private static final int BOUND = 1000;
+    private static final int CAPACITY = 150_000;  // 5_000 по условию задачи. Потом увеличиваем для сравнения времени работы методов до 150_000
+    private static final int BOUND = 1000;        // 1000 по условию задачи
     private static final int INSERT_COUNT = 10_000;
 
 
     public static void main(String[] args) {
-        List<Integer> arrayList = new ArrayList<>();
-        List<Integer> linkedList = new LinkedList<>();
+        List<Integer> arrayList = new ArrayList<>();     // это коллекция ArrayList с элементами
+        List<Integer> linkedList = new LinkedList<>();   // это коллекция LinkedList с элементами
 
-        Random random = new Random();
+        Random random = new Random();                    // генератор случайных чисел
 
-        for (int i = 0; i < CAPACITY; i++) {
-            int value = random.nextInt(BOUND + 1);
-            arrayList.add(value);
-            linkedList.add(value);
+        for (int i = 0; i < CAPACITY; i++) {                 // заполнение коллекций значениями от 0 до BOUND (1000)
+            int value = random.nextInt(BOUND + 1);     // генерируем случайное число от 0 до BOUND
+            arrayList.add(value);                             // добавляем его в коллекцию ArrayList
+            linkedList.add(value);                            // добавляем его в коллекцию LinkedList
         }
 
-        System.out.println("array size: " + arrayList.size());
+        System.out.println("array size: " + arrayList.size());    // выводим размер (5000) коллекций ArrayList и LinkedList в консоль для сравнения
         System.out.println("linked size: " + linkedList.size());
 
         long start = System.currentTimeMillis();
@@ -141,6 +141,33 @@ public class CompareListsWorkTime {
         long end = System.currentTimeMillis();
         return end - start;
     }
+
+    /* Пример вывода в консоль:
+
+    array size: 150000
+linked size: 150000
+Time array contains: 10
+Time array contains: 7
+
+======================
+ArrayList во много быстрее LinkedList !!!
+
+get array: 12
+insert array: 211
+deleteByIndex array: 209
+deleteByValue array: 6138
+
+Общее время выполнения для ArrayList: 6573
+
+ =============================
+LinkedList: очень медленно !!!
+get linked: 39779
+insert linked: 3520
+deleteByIndex linked: 4275
+deleteByValue linked: 12915
+
+Общее время выполнения для LinkedList: 60493
+     */
 
 
 

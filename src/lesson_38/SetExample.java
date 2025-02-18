@@ -73,6 +73,8 @@ public class SetExample {
 
         System.out.println();
 
+        System.out.println("++++++++++++");
+
 
         Iterator<Integer> iterator = integers.iterator();
         while (iterator.hasNext()) {
@@ -130,12 +132,10 @@ public class SetExample {
         // comparator() - Возвращает компаратор
         // вернет null если используется естественный порядок
 
+        System.out.println("\n===================\n");
+
 
         test();
-
-
-
-
 
     }
 
@@ -152,8 +152,6 @@ public class SetExample {
         // Arrays.asList(T[] array) - преобразует массив в список
         List<String> list = Arrays.asList(words);
         System.out.println(list);
-
-
 
 
     }
