@@ -16,8 +16,15 @@ public class Task1 {
         map2.put("cherry", 30);
         map2.put("date", 40);
 
+        System.out.println("================\n");
+
         Map<String, Integer> intersectionMap = intersection(map1, map2);                // пересечение множеств map1 и map2 по ключам
         intersectionMap.forEach((key, value) -> System.out.println(key + ": " + value));  // выводим пересечение множеств
+
+        System.out.println("\n================\n");
+
+        System.out.println("map1: " + map1);
+        System.out.println("map2: " + map2);
 
     }
 
