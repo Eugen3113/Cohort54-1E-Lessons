@@ -49,7 +49,7 @@ public class Task3 {
         List<Person> filteredPeople = people.stream()
                 .filter(p -> p.age > 25 && p.city.equals("Berlin"))
                 //
-                .collect(Collectors.toUnmodifiableList());
+                .collect(Collectors.toList());
 
         filteredPeople.forEach(System.out::println);
     }

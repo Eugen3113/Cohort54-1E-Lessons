@@ -27,9 +27,10 @@ public class Task2 {
         return strings.stream()
                 .filter(s -> s.startsWith("A")) //  в новом списке должны быть только те строки из старого списка
                                                 // которые начинаются на определенную букву (по задаче: "A")
-                //.filter(s -> s.charAt(0) == 'A')
+                //.filter(s -> s.charAt(0) == 'A')  // второй вариант решения задачи (charAt(0) == 'A' - неработает когда в строке есть пробелы)
                 .sorted()
-                .collect(Collectors.toUnmodifiableList());
+                .collect(Collectors.toUnmodifiableList()); // отсортируйте их в алфавитном порядке и сохраните в новый список строк
+                                                           // в виде неизменяемого списка
 
 
 
